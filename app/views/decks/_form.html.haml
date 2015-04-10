@@ -1,0 +1,16 @@
+- if @deck.errors.any?
+  #error_explanation
+    %h4= "#{pluralize(@deck.errors.count, "error")} prohibited this deck from being saved:"
+    %ul
+      - @deck.errors.full_messages.each do |msg|
+        %li= msg
+
+%div.well.col-sm-3
+  = form_for @deck do |f|
+    .fieldset.form-group
+      = f.label :description
+      = f.text_field :description
+    .fieldset.action
+      = f.submit class: 'btn btn-primary'
+
+

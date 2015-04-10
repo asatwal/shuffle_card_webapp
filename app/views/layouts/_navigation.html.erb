@@ -1,0 +1,30 @@
+<ul class="nav">
+  <li>
+    <%= link_to "WhichCardApp!", root_path, :class => 'brand' %>
+  </li>
+</ul>
+
+<div class="nav_item">
+  <%= link_to 'Cards', cards_path, :class => 'btn btn-small' %>
+</div>
+
+<div class="btn-group nav_item dropdown">
+  <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown', 'data-target' => '#' do %>
+  	Decks <span class='caret'></span>
+  <% end %>
+  <ul class='dropdown-menu'>
+  	<% Deck.all.each do |deck| %>
+	  	<li>
+	  		<%= link_to deck.description, deck_path(deck) %>
+	  	</li>
+	  <% end %>
+  	<li class='divider'></li>
+  	<li>
+  	  <%= link_to(new_deck_path) do %>
+  	    <i class='icon-plus'></i>
+  	  	  New
+  	  	<% end %>
+  	</li>
+  </ul>
+ </div>
+

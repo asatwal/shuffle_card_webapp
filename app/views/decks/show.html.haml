@@ -1,0 +1,9 @@
+
+%h1 Deck of Cards
+%br
+%h3= @deck.description
+%br
+
+= render '/cards/cards', cards: @deck.cards 
+
+= link_to 'Shuffle', shuffle_deck_path(@deck), method: :post, class: 'btn btn-primary btn-small'  

@@ -1,0 +1,22 @@
+%h1 List of Decks
+%br
+
+.row
+  .col-sm-10
+    %table.table
+      %thead
+        %tr
+          %th(width="20%") Description
+          %th(width="10%")
+          %th(width="10%")
+
+      %tbody
+        - @decks.each do |deck|
+          %tr
+            %td= link_to deck.description, deck
+            %td= link_to 'Show', deck
+            %td= link_to 'Delete', deck, :method => :delete, :data => { :confirm => "Delete deck #{deck.description} ?" }
+
+%br
+
+= link_to 'New Deck', new_deck_path, class: 'btn btn-primary btn-small'  

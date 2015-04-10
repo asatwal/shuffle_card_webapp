@@ -1,0 +1,5 @@
+%div.well.col-sm-12
+  - cards.each_index do |i|
+    - if  (i + 1)% 13 == 1
+      .row
+    %img.card(src="#{asset_path cards[i].image_name }")
