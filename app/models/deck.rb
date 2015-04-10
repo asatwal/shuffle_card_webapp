@@ -1,4 +1,3 @@
-require 'pry' 
 
 class Deck < ActiveRecord::Base
   has_many :deck_cards, dependent: :destroy
